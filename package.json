@@ -1,0 +1,15 @@
+{
+  "name": "boardgames",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "lerna bootstrap --hoist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nukeop",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
