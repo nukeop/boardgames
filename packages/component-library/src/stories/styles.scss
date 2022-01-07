@@ -1,0 +1,8 @@
+.story-list {
+    display: flex;
+    flex-flow: row wrap;
+
+    &>* {
+        margin: 0 10px 10px 0;
+    }
+}

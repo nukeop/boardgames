@@ -1,0 +1,19 @@
+@import '../../shadows.scss';
+@import '../../vars.scss';
+
+.card {
+    @include shadow-low;
+    display: flex;
+    flex-flow: column;
+
+    box-sizing: border-box;
+    width: 96px;
+    height: 144px;
+    border-radius: $border-radius-base;
+
+    transition: $short-duration ease-in-out;
+
+    &:hover {
+        @include shadow;
+    }
+}

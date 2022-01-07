@@ -1,0 +1,98 @@
+@import "../../palette.scss";
+
+.playing-card {
+    display: flex;
+    flex-flow: row;
+    padding: 0.5em;
+    user-select: none;
+    background: $white;
+    font-family: "Roboto Slab", serif;
+
+    &.red {
+        color: $red;
+    }
+
+    &.black {
+        color: $black;
+    }
+
+    .rank {
+        display: flex;
+        flex-flow: column;
+        justify-content: left;
+        align-items: center;
+        font-size: 18px;
+
+        &.left {
+        }
+
+        &.right {
+            transform: rotate(180deg);
+        }
+    }
+
+    .pip {
+        font-size: 12px;
+        line-height: 10px;
+
+        &.large {
+            font-size: 24px;
+        }
+
+        &.clubs:after {
+            content: "♣";
+        }
+
+        &.diamonds:after {
+            content: "♦";
+        }
+
+        &.hearts:after {
+            content: "♥";
+        }
+
+        &.spades:after {
+            content: "♠";
+        }
+    }
+
+    .picture {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 24px;
+        flex: 1 1 auto;
+    }
+
+    .pips {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        padding: 12px 4px;
+        flex: 1 1 auto;
+    }
+
+    .pips-column {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 auto;
+        height: 100%;
+        
+        &.centered {
+            justify-content: center;
+            gap: 30px;
+        }
+
+        &.large-gap {
+            gap: 54px;
+        }
+    }
+
+    .picture {
+        font-size: 3em;
+    }
+}
