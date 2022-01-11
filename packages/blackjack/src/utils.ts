@@ -1,0 +1,1 @@
+export const enumValues = <T extends object>(enumType: T): number[] => Object.values(enumType).filter(k => !isNaN(Number(k)));
