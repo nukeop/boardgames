@@ -22,7 +22,11 @@ export enum CardRank {
     Ace,
 };
 
-export interface ICard {
+export interface ToString {
+    toString(): string;
+}
+
+export interface ICard extends ToString {
     suit: CardSuit;
     rank: CardRank;
 }
@@ -32,7 +36,11 @@ export interface ICardCollection {
     serialize(): ICard[];
 }
 
-export interface IHand extends ICardCollection {};
+export interface IHand extends ICardCollection, ToString {
+    isBlackjack(): boolean;
+    isBust(): boolean;
+
+};
 
 export interface IDeck extends ICardCollection {
     deal: () => ICard;
@@ -41,6 +49,7 @@ export interface IDeck extends ICardCollection {
 
 export interface BlackjackState {
     deck: ICard[];
-    playerHand: ICard[];
-    dealerHand: ICard[];
+    hands: {
+        [playerId: string]: ICard[];
+    };
 };

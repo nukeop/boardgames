@@ -5,11 +5,11 @@ import { Hand } from "./hand";
 import { CardRank, CardSuit, ICard, IDeck, IHand } from "./types";
 
 export class Deck implements IDeck {
+  cards: ICard[];
+
   constructor(cards: ICard[] = []) {
     this.cards = cards;
   }
-
-  cards: ICard[];
 
   deal(): ICard {
     const card = this.cards.shift();
@@ -20,7 +20,7 @@ export class Deck implements IDeck {
   }
 
   dealHand(numCards: number): IHand {
-    return Hand.fromCards(range(numCards).map(() => this.deal()));
+    return new Hand(range(numCards).map(() => this.deal()));
   }
 
   static getFullDeck(): IDeck {
